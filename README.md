@@ -27,8 +27,8 @@ ollama run llama3
 uvicorn interviewer_app:app --reload
 http://127.0.0.1:8000/docs
 
-✅ API Usage
-POST /docs
+### API Usage
+### POST /docs
 Request Body:
 {
   "session_id": "aiman_session1",
@@ -39,20 +39,20 @@ Request Body:
 The stage should be incremented per question (0–5).
 user_response is empty on first question and filled afterward.
 
-🧩 Example Q&A Flow
+### Example Q&A Flow
 User sends request with stage: 0 → receives Q1.
 User submits answer with stage: 1 → gets feedback + Q2.
 After stage 5 → receives total average scores and summary.
 
 
-🧠 Design Decisions
+### Design Decisions
 Local Execution: Powered by Ollama and LLaMA3 for full offline capability.
 Plain Feedback Parsing: Uses regex to extract scores, allowing flexibility.
 Follow-up Prompts: Automatically generated when scores fall below 6.
 Evaluation Robustness: Falls back to default scoring if feedback parsing fails.
 
 
-➕ Optional Features Implemented
+### Optional Features Implemented
  Score Breakdown: Clarity, Accuracy, Depth (out of 10)
  Average Score Summary after 5 questions
 
