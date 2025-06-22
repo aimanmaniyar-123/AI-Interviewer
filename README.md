@@ -50,6 +50,26 @@ Local Execution: Powered by Ollama and LLaMA3 for full offline capability.
 Plain Feedback Parsing: Uses regex to extract scores, allowing flexibility.
 Follow-up Prompts: Automatically generated when scores fall below 6.
 Evaluation Robustness: Falls back to default scoring if feedback parsing fails.
+### Branching flow
+Start Interview (stage = 0)
+        ↓
+Generate Q1 ➝ Return Q1 to user
+        ↓
+Receive Answer to Q1
+        ↓
+Evaluate Answer (stage ≥ 1):
+   ├── Score (Clarity, Accuracy, Depth)
+   ├── Extract Plain Feedback
+   ├── If any score < 6 → Add Follow-up Prompt
+   ↓
+Generate Next Question
+        ↓
+Repeat until stage = 5
+        ↓
+✅ Interview Complete:
+   ├── Average all scores
+   ├── Return Summary + Feedback
+
 
 
 ### Optional Features Implemented
