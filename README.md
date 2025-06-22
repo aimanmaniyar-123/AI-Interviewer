@@ -44,6 +44,18 @@ User sends request with stage: 0 → receives Q1.
 User submits answer with stage: 1 → gets feedback + Q2.
 After stage 5 → receives total average scores and summary.
 
+
+🧠 Design Decisions
+Local Execution: Powered by Ollama and LLaMA3 for full offline capability.
+Plain Feedback Parsing: Uses regex to extract scores, allowing flexibility.
+Follow-up Prompts: Automatically generated when scores fall below 6.
+Evaluation Robustness: Falls back to default scoring if feedback parsing fails.
+
+
+➕ Optional Features Implemented
+ Score Breakdown: Clarity, Accuracy, Depth (out of 10)
+ Average Score Summary after 5 questions
+
 🤝 Contact
 Built by Aiman Maniyar.
 Contributions & stars are welcome!
