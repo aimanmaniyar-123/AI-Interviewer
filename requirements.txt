@@ -6,23 +6,23 @@ source venv/bin/activate
 python_version >= "3.10"
 
 # Web framework
-fastapi==0.110.2
-uvicorn[standard]==0.29.0
+fastapi
+uvicorn
 
 # Data models
-pydantic==2.7.1
+pydantic
 
 # LangChain core
-langchain==0.2.1
-langchain-community==0.2.1
-langchain-core==0.2.1
+langchain
+langchain-community
+langchain-core
 
 # LLM (Ollama integration)
-ollama==0.1.7
+ollama
 
 # Utility libraries
-httpx==0.27.0
-requests==2.32.3
+httpx
+requests
 
 # Optional: JSON parsing safety (if you decide to use later)
-python-dotenv==1.0.1
+python-dotenv
