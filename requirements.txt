@@ -16,13 +16,12 @@ pydantic
 langchain
 langchain-community
 langchain-core
+langchain-groq
 
-# LLM (Ollama integration)
-ollama
+
 
 # Utility libraries
 httpx
 requests
 
-# Optional: JSON parsing safety (if you decide to use later)
 python-dotenv
