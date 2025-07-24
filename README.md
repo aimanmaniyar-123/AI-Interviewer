@@ -1,6 +1,6 @@
 # 🧠 AI-Powered Technical Interviewer.
 
-This project is an AI-powered technical interviewer that conducts multi-stage interviews, scores candidate answers on clarity, accuracy, and depth, and provides intelligent feedback — all running locally using LangChain and Ollama.
+This project is an AI-powered technical interviewer that conducts multi-stage interviews, scores candidate answers on clarity, accuracy, and depth, and provides intelligent feedback — all running locally using LangChain and Groq.
 
 
 ## 🛠️ Technologies Used
@@ -9,8 +9,10 @@ This project is an AI-powered technical interviewer that conducts multi-stage in
 |-----------------|-------------------------------------------|
 | FastAPI         | Backend API framework                     |
 | LangChain       | Prompt chaining and LLM orchestration     |
-| Ollama          | Local LLM execution (LLaMA3 used here)    |
+| Groq            | Ultra-fast LLM inference(LLaMA3 used here)|
 | Python 3.10+    | Language for app logic                    |
+| Pydantic        | Request/response models                   |
+| Uvicorn         | ASGI server                               |
 
 
 ## 📦 Setup Instructions
@@ -21,9 +23,8 @@ cd AI-Interviewer
 
 ### 2. Install Python Dependencies
 pip install -r requirements.txt
-### 3. Run Ollama and Pull LLaMA Model
-ollama run llama3
-### 4. Start FastAPI Server
+
+### 3. Start FastAPI Server
 uvicorn interviewer_app:app --reload
 http://127.0.0.1:8000/docs
 
@@ -46,7 +47,7 @@ After stage 5 → receives total average scores and summary.
 
 
 ### Design Decisions
-Local Execution: Powered by Ollama and LLaMA3 for full offline capability.
+LLM Execution: Powered by Groq and LLaMA3.
 Plain Feedback Parsing: Uses regex to extract scores, allowing flexibility.
 Follow-up Prompts: Automatically generated when scores fall below 6.
 Evaluation Robustness: Falls back to default scoring if feedback parsing fails.
