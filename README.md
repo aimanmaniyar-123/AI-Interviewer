@@ -21,12 +21,20 @@ This project is an AI-powered technical interviewer that conducts multi-stage in
 git clone https://github.com/aimanmaniyar-123/AI-Interviewer.git
 cd AI-Interviewer
 
-### 2. Install Python Dependencies
+### 2. Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate
+
+### 3. Install Python Dependencies
 pip install -r requirements.txt
 
-### 3. Start FastAPI Server
+### 4. Add .env file
+create a .env file and set your Groq API key:
+GROQ_API_KEY=your-groq-api-key
+
+### 5. Start FastAPI Server
 uvicorn interviewer_app:app --reload
-http://127.0.0.1:8000/docs
+visit: http://127.0.0.1:8000/docs
 
 ### API Usage
 ### POST /docs
